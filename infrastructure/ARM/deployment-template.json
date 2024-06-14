@@ -331,6 +331,27 @@
         "keys",
         "rbac"
       ]
+    },
+    "REGISTRY_SERVER_URL": {
+      "type": "string",
+      "defaultValue": "",
+      "metadata": {
+        "description": "Azure container registry logon server"
+      }
+    },
+    "REGISTRY_SERVER_USERNAME": {
+      "type": "string",
+      "defaultValue": "",
+      "metadata": {
+        "description": "Azure container registry username for access"
+      }
+    },
+    "REGISTRY_SERVER_PASSWORD": {
+      "type": "string",
+      "defaultValue": "",
+      "metadata": {
+        "description": "Azure container registry password"
+      }
     }
   },
   "variables": {
@@ -858,6 +879,9 @@
               "[resourceId('Microsoft.Web/sites', parameters('webUiName'))]"
           ],
           "properties": {
+              "DOCKER_REGISTRY_SERVER_URL": "[parameters('REGISTRY_SERVER_URL')]",
+              "DOCKER_REGISTRY_SERVER_USERNAME": "[parameters('REGISTRY_SERVER_USERNAME')]",
+              "DOCKER_REGISTRY_SERVER_PASSWORD": "[parameters('REGISTRY_SERVER_PASSWORD')]",
               "SearchServiceName": "[parameters('searchServicesName')]",
               "SearchApiKey": "[listAdminKeys(concat('Microsoft.Search/searchServices/', parameters('searchServicesName')), '2021-04-01-preview').primaryKey]",
               "SearchIndexName": "conversational-index",
