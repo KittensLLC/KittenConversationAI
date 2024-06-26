@@ -12,4 +12,4 @@
     -   **Solution:** Increase your rate limits on your GPT model
 
 - How do I delete documents from the search service?
-    -  To delete documents from the search service follow the instructions here: https://learn.microsoft.com/en-us/rest/api/searchservice/addupdate-or-delete-documents
+    -  To delete documents from the search service follow the instructions here: https://learn.microsoft.com/en-us/rest/api/searchservice/addupdate-or-delete-documents 
